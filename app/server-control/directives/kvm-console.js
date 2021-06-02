@@ -30,11 +30,18 @@ window.angular && (function(angular) {
                 return false;
               };
 
+              var KVMconn = false;
               function connected(e) {
                 $log.debug('RFB Connected');
+                KVMconn = true;
               }
               function disconnected(e) {
                 $log.debug('RFB disconnected');
+                if (KVMconn == false) {
+                  alert(
+                      'Unable to start a remote KVM session. Only 1 active KVM session is supported.');
+                }
+                KVMconn = false;
               }
 
               var host = $location.host();
