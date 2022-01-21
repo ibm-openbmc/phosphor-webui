@@ -35,6 +35,7 @@ window.angular && (function(angular) {
         $scope.oldInterface = JSON.parse(JSON.stringify($scope.interface));
         $scope.selectedInterface = interfaceId;
         $scope.networkDevice = false;
+        loadNetworkInfo();
       };
 
       $scope.addDNSField = function() {
