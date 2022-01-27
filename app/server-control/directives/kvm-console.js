@@ -39,7 +39,7 @@ window.angular && (function(angular) {
                 $log.debug('RFB disconnected');
                 if (KVMconn == false) {
                   alert(
-                      'Unable to start a remote KVM session. Only 1 active KVM session is supported.');
+                      'Unable to start a remote KVM session. The maximum number of active KVM sessions supported has been reached.');
                 }
                 KVMconn = false;
               }
